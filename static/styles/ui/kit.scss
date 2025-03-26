@@ -1,0 +1,113 @@
+@use './mixins.scss' as mixin;
+// colors 
+$bg-primary: #FFFFFF;
+$bg-inverse: #212121;
+$bg-inverse-subdued-8: rgba(237, 237, 237, 1);
+$bg-inverse-subdued-16: rgba(219, 219, 219, 1);
+$bg-inverse-subdued-64: rgba(113, 113, 113, 1);
+
+$text-primary: #212121;
+$text-inverse: #FFFFFF;
+$text-primary-subduded-32: rgba(184, 184, 184, 1);
+$text-primary-subduded-42: rgba(148, 148, 148, 1);
+$text-system-wrong: rgba(159, 49, 37, 1);
+
+$icon-primary: #212121;
+$icon-inverse: #FFFFFF;
+$icon-primary-subdued-32: rgba(184, 184, 184, 1);
+
+$border-primary: #212121;
+$border-primary-subduded-32: rgba(184, 184, 184, 1);
+$border-system-wrong: rgba(159, 49, 37, 1);
+// typography
+@mixin heading_1() {
+    font-weight: 500;
+    font-size: 8rem;
+    line-height: 100%;
+    letter-spacing: -4%;
+}
+@mixin heading_2() {
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 100%;
+    letter-spacing: -4%;
+}
+@mixin heading_3() {
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 100%;
+    letter-spacing: -4%;
+}
+@mixin subheading() {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 114.99999999999999%;
+    letter-spacing: -3%;
+}
+@mixin text_1() {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 130%;
+    letter-spacing: -2%;
+    font-variant-numeric-figure: lining-nums;
+    font-variant-numeric-spacing: proportional-nums;
+}
+@mixin text_2() {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 130%;
+    letter-spacing: -2%;
+    font-variant-numeric-figure: lining-nums;
+    font-variant-numeric-spacing: proportional-nums;
+}
+@mixin description() {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+    letter-spacing: -1%;
+}
+@mixin button_1() {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 130%;
+    letter-spacing: -3%;
+    font-variant-numeric-figure: lining-nums;
+    font-variant-numeric-spacing: proportional-nums;
+}
+@mixin button_2() {
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 130%;
+    letter-spacing: -3%;
+    font-variant-numeric-figure: lining-nums;
+    font-variant-numeric-spacing: proportional-nums;
+}
+
+.button {
+    height: fit-content;
+    border-radius: 1000rem;
+    &.small {
+        padding: 1rem;
+        @include button_2();
+        &.accent {
+            background-color: $bg-inverse-subdued-8;
+            transition: background .3s ease-in-out;
+            &:hover {
+                background-color: $bg-inverse-subdued-16;
+            }
+        }
+    }
+}
+
+.link {
+    &.basic {
+        &.regular {
+            @include text_1();
+            @include mixin.df_ac;
+            transition: opacity .3s ease-in-out;
+            &:hover {
+                opacity: .75;
+            }
+        }
+    }
+}

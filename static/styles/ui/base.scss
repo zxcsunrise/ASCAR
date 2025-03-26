@@ -1,0 +1,26 @@
+@use './containers.scss' as mobile;
+@use './kit.scss' as kit;
+
+html {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    @include mobile.mobile() {
+        font-size: 12px;
+    }
+}
+
+body {
+    color: kit.$text-primary;
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: kit.$text-primary;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+@mixin df_fdc($gap: 0rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+@mixin df_jb {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin df_ac {
+    display: flex;
+    align-items: center;
+}
+@mixin df_je {
+    display: flex;
+    justify-content: end;
+}
+@mixin df_jb_ac {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

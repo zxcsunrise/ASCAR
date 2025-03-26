@@ -1,0 +1,23 @@
+@use '../ui/mixins.scss' as mixin;
+header {
+    padding: 2.5rem 0;
+    .header-block {
+        .container {
+            gap: 0;
+            .header-nav {
+                ul {
+                    @include mixin.df_fdc(.75rem);
+                }
+            }
+            .contacts {
+                grid-column: 4;
+                ul {
+                    @include mixin.df_fdc(.75rem);
+                }
+            }
+            .btn-block {
+                @include mixin.df_je();
+            }
+        }
+    }
+}
