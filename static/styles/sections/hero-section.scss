@@ -1,0 +1,41 @@
+@use '../ui/kit.scss' as kit;
+@use '../ui/mixins.scss' as mixin;
+
+.hero-section {
+    .hero-block {
+        .container {
+            .hero-title {
+                @include kit.heading_1;
+                &.top {
+                    grid-column: 2 / span 4;
+                }
+                &.bottom {
+                    grid-column: span 5;
+                }
+            }
+            .desc-block {
+                grid-column: 3 / span 3;
+                @include mixin.df_ac;
+                gap: 2.5rem;
+                .desc {
+                    @include kit.text_1;
+                    max-width: 44.5rem;
+                }
+                .button {
+                    flex: 1;
+                    padding: 1rem 0;
+                }
+            }
+            .hero-image {
+                grid-column: span 5;
+                max-width: 100%;
+                margin-top: 1.5rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}

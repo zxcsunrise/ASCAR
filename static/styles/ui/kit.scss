@@ -83,17 +83,36 @@ $border-system-wrong: rgba(159, 49, 37, 1);
     font-variant-numeric-spacing: proportional-nums;
 }
 
+.default-margin {
+    margin: 2.5rem 0;
+}
+
 .button {
     height: fit-content;
     border-radius: 1000rem;
+    text-align: center;
     &.small {
         padding: 1rem;
         @include button_2();
-        &.accent {
+        &.subdued {
             background-color: $bg-inverse-subdued-8;
             transition: background .3s ease-in-out;
             &:hover {
                 background-color: $bg-inverse-subdued-16;
+            }
+        }
+    }
+    &.basic {
+        @include button_1();
+        padding: 1rem 4rem;
+        &.primary {
+            background-color: $bg-inverse;
+            color: $text-inverse;
+            transition: .3s ease-in-out;
+            &:hover {
+                background-color: $bg-primary;
+                color: $text-primary;
+                outline: .0625rem solid $border-primary;
             }
         }
     }
