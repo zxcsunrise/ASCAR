@@ -1,0 +1,33 @@
+@use '../ui/mixins.scss' as mixin;
+@use '../ui/kit.scss' as kit;
+@use '../ui/containers.scss' as container;
+.why-section {
+    .why-block {
+        .container {
+            .title {
+                grid-column: span 1;
+            }
+            .text {
+                grid-column: span 3;
+                @include kit.heading_2;
+            }
+            .info-block {
+                grid-column: 2 / span 4;
+                .item {
+                    @include container.grid(2,2.5rem);
+                    padding: 2.5rem 0;
+                    border-bottom: .0625rem solid kit.$border-primary;
+                    &:last-child {
+                        border: 0;
+                    }
+                    .name {
+                        @include kit.heading_3;
+                    }
+                    .desc {
+                        @include kit.text_1;
+                    }
+                }
+            }
+        }
+    }
+}

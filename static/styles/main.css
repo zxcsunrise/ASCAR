@@ -14,10 +14,12 @@
 }
 
 .default-margin {
-  margin: 2.5rem 0;
+  padding: 2.5rem 0;
 }
 
 .button {
+  display: flex;
+  justify-content: center;
   height: fit-content;
   border-radius: 1000rem;
   text-align: center;
@@ -37,6 +39,16 @@
 }
 .button.small.subdued:hover {
   background-color: rgb(219, 219, 219);
+}
+.button.small.primary {
+  background-color: #212121;
+  color: #FFFFFF;
+  transition: 0.3s ease-in-out;
+}
+.button.small.primary:hover {
+  background-color: #FFFFFF;
+  color: #212121;
+  outline: 0.0625rem solid #212121;
 }
 .button.basic {
   font-weight: 500;
@@ -71,6 +83,17 @@
 }
 .link.basic.regular:hover {
   opacity: 0.75;
+}
+
+.title {
+  grid-column: span 5;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  color: rgb(148, 148, 148);
 }
 
 html {
@@ -122,6 +145,12 @@ header .header-block .container .btn-block {
   justify-content: end;
 }
 
+footer .footer-block .container .item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .hero-section .hero-block .container .hero-title {
   font-weight: 500;
   font-size: 8rem;
@@ -162,6 +191,91 @@ header .header-block .container .btn-block {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.services-section .services-block .container .service {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  grid-column: span 2;
+}
+.services-section .services-block .container .service .img {
+  max-width: 100%;
+  height: 100%;
+}
+.services-section .services-block .container .service .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.services-section .services-block .container .service .info-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.services-section .services-block .container .service .info-block .desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.services-section .services-block .container .service .info-block .desc .title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -3%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  color: #212121;
+}
+.services-section .services-block .container .service .info-block .desc .tarif {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  color: rgb(148, 148, 148);
+}
+.services-section .services-block .container .service.first {
+  grid-column: span 3;
+}
+
+.why-section .why-block .container .title {
+  grid-column: span 1;
+}
+.why-section .why-block .container .text {
+  grid-column: span 3;
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.why-section .why-block .container .info-block {
+  grid-column: 2/span 4;
+}
+.why-section .why-block .container .info-block .item {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding: 2.5rem 0;
+  border-bottom: 0.0625rem solid #212121;
+}
+.why-section .why-block .container .info-block .item:last-child {
+  border: 0;
+}
+.why-section .why-block .container .info-block .item .name {
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.why-section .why-block .container .info-block .item .desc {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
 }
 
 /*# sourceMappingURL=main.css.map */

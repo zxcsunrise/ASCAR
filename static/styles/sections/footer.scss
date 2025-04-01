@@ -1,0 +1,11 @@
+footer {
+    .footer-block {
+        .container {
+            .item {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+            }
+        }
+    }
+}
