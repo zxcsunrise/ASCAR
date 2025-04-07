@@ -131,7 +131,20 @@ $border-system-wrong: rgba(159, 49, 37, 1);
 }
 
 .link {
+    display: flex;
+    gap: .25rem;
     &.basic {
+        &.regular {
+            @include text_1();
+            @include mixin.df_ac;
+            transition: opacity .3s ease-in-out;
+            &:hover {
+                opacity: .75;
+            }
+        }
+    }
+    &.subdued {
+        color: $text-primary-subduded-32;
         &.regular {
             @include text_1();
             @include mixin.df_ac;

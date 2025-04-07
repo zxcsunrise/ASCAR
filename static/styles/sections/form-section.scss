@@ -1,0 +1,52 @@
+@use '../ui/kit.scss' as kit;
+@use '../ui/mixins.scss' as mixin;
+@use '../ui/containers.scss' as container;
+.form-section {
+    .form-block {
+        .container {
+            .name-block {
+                grid-column: span 5;
+                @include container.grid(5);
+                .name {
+                    @include kit.heading_2;  
+                    &.top {
+                        grid-column: 2 / span 4;
+                    }
+                    &.bottom {
+                        grid-column: 3 / span 2;
+                    }
+                }
+            }
+            .title {
+                grid-column: 1 / span 1;
+            }
+            .form {
+                grid-column: 3 / span 3;
+                @include container.grid(3, 2.5rem);
+                row-gap: 0;
+                align-items: center;
+                input,
+                textarea {
+                    padding: 1rem 0;
+                    @include kit.text_1;
+                    border-bottom: .0625rem solid kit.$border-primary;
+                    grid-column: span 3;
+                    &:placeholder {
+                        @include kit.text_1;
+                        text-align: start;
+                    }
+                    &.message {
+                        height: 12rem;
+                        resize: none;
+                        margin-bottom: 4rem;
+                    }
+                }
+                .confirm {
+                    grid-column: span 1;
+                    @include kit.description;
+                    color: kit.$text-primary-subduded-42;
+                }
+            }
+        }
+    }
+}

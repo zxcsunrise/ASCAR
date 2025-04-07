@@ -1,0 +1,52 @@
+@use '../ui/mixins.scss' as mixin;
+@use '../ui/kit.scss' as kit;
+@use '../ui/containers.scss' as container;
+.welcome-section {
+    .welcome-block {
+        .container  {
+            .info-block {
+                grid-column: 2 / span 3;
+                @include mixin.df_fdc(1.75rem);
+                .name {
+                    @include kit.heading_3;
+                }
+                .text {
+                    @include kit.text_1;
+                }
+                .qa {
+                    @include kit.text_1;
+                    .q {
+                        font-weight: 500;
+                    }
+                    span {
+                        font-weight: 500;
+                    }
+                }
+                ul {
+                    list-style-type:decimal;
+                    margin-left: 2rem;
+                    li {
+                        @include kit.text_1;
+                    }
+                }
+                &.welcome {
+                    .name {
+                        @include kit.heading_2;
+                    }
+                }
+                &.sub {
+                    .name {
+                        @include kit.subheading;
+                    }
+                }
+                &.custom {
+                    ul {
+                        margin: 2rem 0;
+                        margin-left: 2rem;
+                        list-style-type:disc;
+                    }
+                }
+            }
+        }
+    }
+}

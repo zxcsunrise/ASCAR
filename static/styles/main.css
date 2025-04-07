@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container {
   margin: 0 2.5rem;
   display: grid;
@@ -70,6 +71,10 @@
   outline: 0.0625rem solid #212121;
 }
 
+.link {
+  display: flex;
+  gap: 0.25rem;
+}
 .link.basic.regular {
   font-weight: 400;
   font-size: 1.5rem;
@@ -82,6 +87,23 @@
   transition: opacity 0.3s ease-in-out;
 }
 .link.basic.regular:hover {
+  opacity: 0.75;
+}
+.link.subdued {
+  color: rgb(184, 184, 184);
+}
+.link.subdued.regular {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+}
+.link.subdued.regular:hover {
   opacity: 0.75;
 }
 
@@ -124,6 +146,14 @@ a {
   cursor: pointer;
 }
 
+input,
+textarea {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
 header .header-block .container {
   gap: 0;
 }
@@ -145,10 +175,80 @@ header .header-block .container .btn-block {
   justify-content: end;
 }
 
+footer .footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
 footer .footer-block .container .item {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  gap: 0rem;
+  justify-content: space-between;
+}
+footer .footer-block .container .item ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+footer .footer-block .container .item ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+footer .footer-block .container .item.nav {
+  grid-column: 4;
+}
+footer .footer-block .container .item .name {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -3%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+footer .footer-block .container .year {
+  grid-column: 5;
+  justify-content: end;
+}
+footer .footer-block .sliding-text-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 10rem;
+}
+footer .footer-block .sliding-text {
+  position: absolute;
+  white-space: nowrap;
+  animation: slideLeft 20s linear infinite;
+  font-weight: 500;
+  font-size: 8rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+    left: 100%;
+  }
+  100% {
+    transform: translateX(-100%);
+    left: 0;
+  }
+}
+footer .footer-block .line {
+  display: flex;
+  height: 0.0625rem;
+  background-color: #212121;
+}
+footer .footer-block .sliding-name span {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -3%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  grid-column: span 5;
 }
 
 .hero-section .hero-block .container .hero-title {
@@ -259,6 +359,7 @@ footer .footer-block .container .item {
   gap: 2.5rem;
   padding: 2.5rem 0;
   border-bottom: 0.0625rem solid #212121;
+  position: relative;
 }
 .why-section .why-block .container .info-block .item:last-child {
   border: 0;
@@ -276,6 +377,320 @@ footer .footer-block .container .item {
   letter-spacing: -2%;
   font-variant-numeric-figure: lining-nums;
   font-variant-numeric-spacing: proportional-nums;
+}
+.why-section .why-block .container .info-block .item .img {
+  display: block;
+  opacity: 0;
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
+  top: 100%;
+  left: 75%;
+  z-index: 10;
+  transition: opacity 0.3s ease-in-out;
+}
+.why-section .why-block .container .info-block .item .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.why-section .why-block .container .info-block .item:hover .img {
+  opacity: 1;
+}
+
+.best-projects-section .best-projects-block .container {
+  row-gap: 6rem;
+}
+.best-projects-section .best-projects-block .container .title {
+  grid-column: span 1;
+}
+.best-projects-section .best-projects-block .container .link {
+  grid-column: 5;
+  justify-content: end;
+  align-items: start;
+}
+.best-projects-section .best-projects-block .container .name {
+  grid-column: 2/span 3;
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.best-projects-section .best-projects-block .container .holder {
+  grid-column: 2/span 4;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+.best-projects-section .best-projects-block .container .holder .item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.best-projects-section .best-projects-block .container .holder .item:nth-of-type(2n) {
+  margin-top: 8rem;
+}
+.best-projects-section .best-projects-block .container .holder .item .img {
+  max-width: 100%;
+}
+.best-projects-section .best-projects-block .container .holder .item .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.best-projects-section .best-projects-block .container .holder .item .info-block {
+  display: flex;
+  gap: 1.25rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -3%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.best-projects-section .best-projects-block .container .holder .item .info-block .desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.best-projects-section .best-projects-block .container .holder .item .info-block .desc .subtext {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 130%;
+  letter-spacing: -3%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  color: rgb(184, 184, 184);
+}
+
+.testimonials-section .testimonials-block .container .title {
+  grid-column: 1/span 1;
+}
+.testimonials-section .testimonials-block .container .link {
+  grid-column: 5/span 1;
+}
+.testimonials-section .testimonials-block .container .desc {
+  grid-column: 1/span 2;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: -3%;
+}
+.testimonials-section .testimonials-block .container .slider {
+  grid-column: span 3;
+  position: relative;
+}
+.testimonials-section .testimonials-block .container .slider::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none; /* Это позволяет кликам проходить сквозь псевдоэлемент */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 80%, #FFFFFF 100%);
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide .top {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.0625rem solid #212121;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide .top .count {
+  display: flex;
+  flex: 1;
+  justify-content: end;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide .top .avatar {
+  max-width: 6rem;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide .top .avatar img {
+  border-radius: 100rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide .top .info .name {
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide .top .info .date {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.testimonials-section .testimonials-block .container .slider .testimonialsSwiper .swiper-wrapper .swiper-slide .bottom {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.testimonials-section .testimonials-block .container .slider .btn-block {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.testimonials-section .testimonials-block .container .slider .btn-block .swiper-btn {
+  display: flex;
+  padding: 1.25rem;
+  border: 0.0625rem rgb(184, 184, 184) solid;
+  border-radius: 1000rem;
+  cursor: pointer;
+}
+
+.welcome-section .welcome-block .container .info-block {
+  grid-column: 2/span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.welcome-section .welcome-block .container .info-block .name {
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.welcome-section .welcome-block .container .info-block .text {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.welcome-section .welcome-block .container .info-block .qa {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.welcome-section .welcome-block .container .info-block .qa .q {
+  font-weight: 500;
+}
+.welcome-section .welcome-block .container .info-block .qa span {
+  font-weight: 500;
+}
+.welcome-section .welcome-block .container .info-block ul {
+  list-style-type: decimal;
+  margin-left: 2rem;
+}
+.welcome-section .welcome-block .container .info-block ul li {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.welcome-section .welcome-block .container .info-block.welcome .name {
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.welcome-section .welcome-block .container .info-block.sub .name {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: -3%;
+}
+.welcome-section .welcome-block .container .info-block.custom ul {
+  margin: 2rem 0;
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+
+.form-section .form-block .container .name-block {
+  grid-column: span 5;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+}
+.form-section .form-block .container .name-block .name {
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.form-section .form-block .container .name-block .name.top {
+  grid-column: 2/span 4;
+}
+.form-section .form-block .container .name-block .name.bottom {
+  grid-column: 3/span 2;
+}
+.form-section .form-block .container .title {
+  grid-column: 1/span 1;
+}
+.form-section .form-block .container .form {
+  grid-column: 3/span 3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  row-gap: 0;
+  align-items: center;
+}
+.form-section .form-block .container .form input,
+.form-section .form-block .container .form textarea {
+  padding: 1rem 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  border-bottom: 0.0625rem solid #212121;
+  grid-column: span 3;
+}
+.form-section .form-block .container .form input:placeholder,
+.form-section .form-block .container .form textarea:placeholder {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+  text-align: start;
+}
+.form-section .form-block .container .form input.message,
+.form-section .form-block .container .form textarea.message {
+  height: 12rem;
+  resize: none;
+  margin-bottom: 4rem;
+}
+.form-section .form-block .container .form .confirm {
+  grid-column: span 1;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 130%;
+  letter-spacing: -1%;
+  color: rgb(148, 148, 148);
 }
 
 /*# sourceMappingURL=main.css.map */

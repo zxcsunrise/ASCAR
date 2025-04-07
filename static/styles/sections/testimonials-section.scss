@@ -1,0 +1,89 @@
+@use '../ui/kit.scss' as kit;
+@use '../ui/mixins.scss' as mixin;
+.testimonials-section {
+    .testimonials-block {
+        .container {
+            .title {
+                grid-column: 1 / span 1;
+            }
+            .link {
+                grid-column: 5 / span 1;
+            }
+            .desc {
+                grid-column: 1 / span 2;
+                @include kit.subheading;
+            }
+            .slider {
+                grid-column: span 3;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 2;
+                    pointer-events: none; /* Это позволяет кликам проходить сквозь псевдоэлемент */
+                    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 80%, #FFFFFF 100%);
+                }
+                
+                .testimonialsSwiper {
+                    width: 100%;
+                    position: relative; 
+                    z-index: 1;
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            @include mixin.df_fdc(1rem);
+                            .top {
+                                display: flex;
+                                gap: 1rem;
+                                padding-bottom: 1rem;
+                                border-bottom: .0625rem solid kit.$border-primary;
+                                .count {
+                                    display: flex;
+                                    flex: 1;
+                                    justify-content: end;
+                                    @include kit.text_1;
+                                }
+                                .avatar {
+                                    max-width: 6rem;
+                                    img {
+                                        border-radius: 100rem;
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                                .info {
+                                    .name {
+                                        @include kit.heading_3;
+                                    }
+                                    .date {
+                                        @include kit.text_1;
+                                    }
+                                }
+                            }
+                            .bottom {
+                                @include kit.text_1;
+                            }
+                        }
+                    }
+                }
+                .btn-block {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.25rem;
+                    margin-top: 2.5rem;
+                    .swiper-btn {
+                        display: flex;
+                        padding: 1.25rem;
+                        border: .0625rem kit.$border-primary-subduded-32 solid;
+                        border-radius: 1000rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
