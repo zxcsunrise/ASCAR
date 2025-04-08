@@ -2,7 +2,31 @@
 @use '../ui/kit.scss' as kit;
 .services-section {
     .services-block {
+        &.page {
+            .service {
+                grid-column: span 2 !important;
+                &.first {
+                    grid-column: 2 / span 2 !important;
+                }
+                .img {
+                    aspect-ratio: 1 /1;
+                }
+            }
+        }
         .container {
+            .link {
+                grid-column: span 1;
+            }
+            .name {
+                grid-column: span 2 ;
+                @include kit.heading_1;
+                display: flex;
+                &::after {
+                    content: '2';
+                    @include kit.button_1;
+                    color: kit.$text-primary-subduded-32;
+                }
+            }
             .service {
                 @include mixin.df_fdc(1.25rem);
                 grid-column: span 2;
