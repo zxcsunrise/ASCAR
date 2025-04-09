@@ -161,3 +161,16 @@ $border-system-wrong: rgba(159, 49, 37, 1);
     @include text_1();
     color: $text-primary-subduded-42;
 }
+
+
+.accordion-item {
+    border-bottom: $border-primary .0625rem solid;
+}
+
+.accordion-header {
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+}

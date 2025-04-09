@@ -13,6 +13,67 @@
                 }
             }
         }
+        &.service-page {
+            .service {
+                grid-column: span 2 !important;
+                &.first {
+                    grid-column: 2 / span 4 !important;
+                }
+                .img {
+                    aspect-ratio: unset;
+                }
+            }
+            .name {
+                grid-column: span 4 !important;
+                &::after {
+                    display: none;
+                }
+            }
+            .link {
+                span {
+                    color: kit.$text-primary-subduded-32;
+                }
+            }
+            .accordion {
+                grid-column: 2 / span 4;
+                .accordion-item {
+                    .accordion-header {
+                        @include mixin.df_jb_ac;
+                        padding: 2.5rem 0;
+                        .title-block {
+                            display: flex;
+                            align-items: center;
+                            gap: 2rem;
+                            .count {
+                                @include kit.text_1;
+                                color: kit.$text-primary-subduded-32;
+                            }
+                            .title {
+                                @include kit.heading_3;
+                                color: kit.$text-primary;
+                            }
+                        }
+                    }
+                    .accordion-content {
+                        padding-bottom: 2.5rem;
+                        p {
+                            @include kit.text_1;
+                        }
+                    }
+                }
+            }
+            .price {
+                grid-column: 4;
+                @include mixin.df_fdc(.5rem);
+                @include kit.text_1;
+                .count {
+                    @include kit.heading_2;
+                }   
+            }
+            .button {
+                margin-top: 2.5rem;
+            }
+        }
         .container {
             .link {
                 grid-column: span 1;

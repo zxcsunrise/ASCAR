@@ -1,0 +1,19 @@
+@use '../ui/kit.scss' as kit;
+@use '../ui/mixins.scss' as mixin;
+@use '../ui/containers.scss' as container;
+.privacy-section {
+    .privacy-block {
+        .container {
+            .privacy-holder {
+                grid-column: 2 / span 3;
+                @include container.grid(3, 2.5rem);
+                .privacy {
+                    @include kit.text_1;
+                    span {
+                        font-weight: 500; 
+                    }
+                }
+            }
+        }
+    }
+}
