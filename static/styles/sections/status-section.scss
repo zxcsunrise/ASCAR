@@ -1,0 +1,40 @@
+@use '../ui/mixins.scss' as mixin;
+@use '../ui/kit.scss' as kit;
+.status-section {
+    background-image: url('../images/img/404-bg.png');
+    filter: saturate(25%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.success {
+        background-image: url('../images/img/success-bg.png');
+        filter: unset;
+    }
+    .status-block {
+        .container {
+            .info-block {
+                @include mixin.df_fdc(1rem);
+                align-items: center;
+                grid-column: 2 / span 3;
+                text-align: center;
+                .link {
+                    text-decoration: underline;
+                }
+                .name {
+                    @include kit.heading_1;
+                }
+                .desc {
+                    @include kit.text_1;
+                }
+            }
+            .button {
+                grid-column: 3 / span 1;
+            }
+        }
+    }
+}
+

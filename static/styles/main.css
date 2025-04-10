@@ -957,4 +957,48 @@ footer .footer-block .sliding-name span {
   font-weight: 500;
 }
 
+.status-section {
+  background-image: url("../images/img/404-bg.png");
+  filter: saturate(25%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.status-section.success {
+  background-image: url("../images/img/success-bg.png");
+  filter: unset;
+}
+.status-section .status-block .container .info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  grid-column: 2/span 3;
+  text-align: center;
+}
+.status-section .status-block .container .info-block .link {
+  text-decoration: underline;
+}
+.status-section .status-block .container .info-block .name {
+  font-weight: 500;
+  font-size: 8rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
+.status-section .status-block .container .info-block .desc {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 130%;
+  letter-spacing: -2%;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: proportional-nums;
+}
+.status-section .status-block .container .button {
+  grid-column: 3/span 1;
+}
+
 /*# sourceMappingURL=main.css.map */
