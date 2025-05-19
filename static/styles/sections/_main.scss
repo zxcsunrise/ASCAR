@@ -1,5 +1,6 @@
 @use './header.scss';
 @forward './footer.scss';
+
 @forward './hero-section.scss';
 @forward './services-section.scss';
 @forward './why-section.scss';
@@ -11,3 +12,6 @@
 @forward './about-section.scss';
 @forward './privacy-section.scss';
 @forward './status-section.scss';
+@forward './contacts-section.scss';
+@forward './articles-section.scss';
+@forward './interior-section.scss';

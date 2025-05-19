@@ -20,3 +20,8 @@
     justify-content: space-between;
     align-items: center;
 }
+@mixin img($size) {
+    width: 100%;
+    height: 100%;
+    object-fit: $size;
+}

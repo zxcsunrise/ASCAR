@@ -1,0 +1,51 @@
+@use '../ui/kit.scss' as kit;
+@use '../ui/mixins.scss' as mixin;
+@use '../ui/containers.scss' as container;
+
+.interior-section {
+    .interior-block {
+        .container {
+            .slider {
+                grid-column: 2 / span 4;
+
+                .interiorSwiper {
+                    .swiper-slide {
+                        height: 43.5rem;
+
+                        img {
+                            @include mixin.img(cover);
+                        }
+                    }
+                    
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                        padding: 1rem 1.5rem;
+                        border-radius: 1000rem;
+                        border: .0625rem kit.$border-primary-subduded-32 solid;
+                        border-radius: 1000rem;
+                        background-color: kit.$bg-primary;
+                        cursor: pointer;
+                        &::after {
+                            font-size: 0;
+                        }
+                    }
+                    .swiper-pagination {
+                        
+
+                        .swiper-pagination-bullet {
+                            transition: .3s;
+                            height: .75rem;
+                            width: .75rem;
+                            margin: 0 .75rem;
+                            background: kit.$bg-primary;
+                        }
+                        .swiper-pagination-bullet-active {
+                            width: 2.5rem;
+                            border-radius: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

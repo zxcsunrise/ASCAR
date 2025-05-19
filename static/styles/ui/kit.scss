@@ -5,6 +5,7 @@ $bg-inverse: #212121;
 $bg-inverse-subdued-8: rgba(237, 237, 237, 1);
 $bg-inverse-subdued-16: rgba(219, 219, 219, 1);
 $bg-inverse-subdued-64: rgba(113, 113, 113, 1);
+$bg-trans: rgba(255, 255, 255, 0.5);
 
 $text-primary: #212121;
 $text-inverse: #FFFFFF;
@@ -133,6 +134,7 @@ $border-system-wrong: rgba(159, 49, 37, 1);
 .link {
     display: flex;
     gap: .25rem;
+    cursor: pointer;
     &.basic {
         &.regular {
             @include text_1();

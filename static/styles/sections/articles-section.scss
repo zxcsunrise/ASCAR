@@ -1,0 +1,36 @@
+@use '../ui/kit.scss' as kit;
+@use '../ui/mixins.scss' as mixin;
+@use '../ui/containers.scss' as container;
+
+.articles-section {
+    .articles-block {
+        .container {
+            .name {
+              @include kit.heading_1;
+                display: flex;
+                &::after {
+                    content: '52';
+                    @include kit.button_1;
+                    color: kit.$text-primary-subduded-32;
+                }
+            }
+            .card-holder {
+                @include container.grid(2);
+                gap: 2.5rem;
+                grid-column: 2 / span 4;
+                .card {
+                    @include mixin.df_fdc(.75rem);
+                    .img {
+                        height: 22.25rem;
+                        img {
+                            @include mixin.img(cover);
+                        }
+                    }
+                    .info {
+                         @include mixin.df_fdc(.5rem);
+                    }
+                }
+            }
+        }
+    }
+}
