@@ -129,12 +129,23 @@ $border-system-wrong: rgba(159, 49, 37, 1);
             }
         }
     }
+    &.rounded {
+        @include subheading();
+        padding: 2.1rem;
+        border-radius: 10000rem;
+        border: .0625rem solid $border-primary-subduded-32;
+        aspect-ratio: 1 / 1;
+        align-items: center;
+        transition: border .3s ease-in-out;
+        &:hover {
+             border: .0625rem solid $border-primary;
+        }
+    }
 }
 
 .link {
     display: flex;
     gap: .25rem;
-    cursor: pointer;
     &.basic {
         &.regular {
             @include text_1();
@@ -167,10 +178,6 @@ $border-system-wrong: rgba(159, 49, 37, 1);
 
 .accordion-item {
     border-bottom: $border-primary .0625rem solid;
-}
-
-.accordion-header {
-    cursor: pointer;
 }
 
 .accordion-content {

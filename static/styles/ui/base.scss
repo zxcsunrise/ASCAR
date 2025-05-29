@@ -1,7 +1,11 @@
 @use './containers.scss' as mobile;
 @use './kit.scss' as kit;
 
+* {
+    cursor: none;
+}
 html {
+    background-color: #fff;
     font-size: 16px;
     font-family: "Inter", sans-serif;
     @include mobile.mobile() {
@@ -22,7 +26,6 @@ ul,ol {
 a {
     text-decoration: none;
     color: kit.$text-primary;
-    cursor: pointer;
 }
 
 input,
@@ -32,4 +35,18 @@ textarea {
     padding: 0;
     margin: 0;
 }
-
+.custom-cursor {
+            position: fixed;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: #212121;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out, background-color 0.1s ease;
+            will-change: transform;
+        }

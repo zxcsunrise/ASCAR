@@ -24,6 +24,7 @@
                 }
                 ul {
                     list-style-type:decimal;
+                    @include mixin.df_fdc(1.5rem);
                     margin-left: 2rem;
                     li {
                         @include kit.text_1;

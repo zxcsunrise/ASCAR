@@ -70,11 +70,25 @@
   color: #212121;
   outline: 0.0625rem solid #212121;
 }
+.button.rounded {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: -3%;
+  padding: 2.1rem;
+  border-radius: 10000rem;
+  border: 0.0625rem solid rgb(184, 184, 184);
+  aspect-ratio: 1/1;
+  align-items: center;
+  transition: border 0.3s ease-in-out;
+}
+.button.rounded:hover {
+  border: 0.0625rem solid #212121;
+}
 
 .link {
   display: flex;
   gap: 0.25rem;
-  cursor: pointer;
 }
 .link.basic.regular {
   font-weight: 400;
@@ -123,15 +137,16 @@
   border-bottom: #212121 0.0625rem solid;
 }
 
-.accordion-header {
-  cursor: pointer;
-}
-
 .accordion-content {
   display: none;
 }
 
+* {
+  cursor: none;
+}
+
 html {
+  background-color: #fff;
   font-size: 16px;
   font-family: "Inter", sans-serif;
 }
@@ -156,7 +171,6 @@ ul, ol {
 a {
   text-decoration: none;
   color: #212121;
-  cursor: pointer;
 }
 
 input,
@@ -165,6 +179,22 @@ textarea {
   outline: 0;
   padding: 0;
   margin: 0;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #212121;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, background-color 0.1s ease;
+  will-change: transform;
 }
 
 header .header-block .container {
@@ -761,6 +791,9 @@ footer .footer-block .sliding-name span {
 }
 .welcome-section .welcome-block .container .info-block ul {
   list-style-type: decimal;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   margin-left: 2rem;
 }
 .welcome-section .welcome-block .container .info-block ul li {
@@ -1097,7 +1130,55 @@ footer .footer-block .sliding-name span {
   flex-direction: column;
   gap: 0.5rem;
 }
+.articles-section .articles-block .container .card-holder .btn-block {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
 
+.article-section .article-block .container {
+  gap: 4rem;
+}
+.article-section .article-block .container .link {
+  align-items: start;
+}
+.article-section .article-block .container .name {
+  font-weight: 500;
+  font-size: 8rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+  display: flex;
+  grid-column: 2/span 4;
+}
+.article-section .article-block .container .img {
+  height: 43.75rem;
+  grid-column: 2/span 4;
+}
+.article-section .article-block .container .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.article-section .article-block .container .desc-block {
+  grid-column: 2/span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.article-section .article-block .container .desc-block .desc {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: -3%;
+}
+
+.interior-section .interior-block .container .name {
+  grid-column: 2/span 2;
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 100%;
+  letter-spacing: -4%;
+}
 .interior-section .interior-block .container .slider {
   grid-column: 2/span 4;
 }
@@ -1116,7 +1197,6 @@ footer .footer-block .sliding-name span {
   border: 0.0625rem rgb(184, 184, 184) solid;
   border-radius: 1000rem;
   background-color: #FFFFFF;
-  cursor: pointer;
 }
 .interior-section .interior-block .container .slider .interiorSwiper .swiper-button-next::after,
 .interior-section .interior-block .container .slider .interiorSwiper .swiper-button-prev::after {

@@ -30,6 +30,11 @@
                          @include mixin.df_fdc(.5rem);
                     }
                 }
+                .btn-block {
+                    grid-column: span 2;
+                    display: flex;
+                    justify-content: center;
+                }
             }
         }
     }
