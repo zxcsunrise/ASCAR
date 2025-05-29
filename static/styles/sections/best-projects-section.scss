@@ -12,6 +12,10 @@
                 grid-column: 5;
                 justify-content: end;
                 align-items: start;
+                &.start {
+                    grid-column: 1;
+                    justify-content: start;
+                }
             }
             .name {grid-column: 2 / span 3;
                 @include kit.heading_2;

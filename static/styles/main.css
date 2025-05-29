@@ -562,6 +562,10 @@ footer .footer-block .sliding-name span {
   justify-content: end;
   align-items: start;
 }
+.best-projects-section .best-projects-block .container .link.start {
+  grid-column: 1;
+  justify-content: start;
+}
 .best-projects-section .best-projects-block .container .name {
   grid-column: 2/span 3;
   font-weight: 500;
