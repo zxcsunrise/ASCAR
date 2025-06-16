@@ -1,21 +1,51 @@
 @use '../ui/mixins.scss' as mixin;
+@use '../ui/containers.scss' as mobile;
+
 header {
     .header-block {
         .container {
             gap: 0;
+
             .header-nav {
                 ul {
                     @include mixin.df_fdc(.75rem);
                 }
+
+                @include mobile.mobile() {
+                    display: none;
+                }
             }
+
             .contacts {
                 grid-column: 4;
+
                 ul {
                     @include mixin.df_fdc(.75rem);
                 }
+
+                @include mobile.mobile() {
+                    display: none;
+                }
             }
+
             .btn-block {
                 @include mixin.df_je();
+
+                @include mobile.mobile() {
+                    display: none;
+                }
+            }
+            .mobile-header-nav {
+                display: none;
+                  @include mobile.mobile() {
+                    display: block;
+                }
+                ul {
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    justify-content: end;
+                }
             }
         }
     }

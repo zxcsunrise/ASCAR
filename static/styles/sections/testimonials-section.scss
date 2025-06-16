@@ -4,8 +4,14 @@
 .testimonials-section {
     .testimonials-block {
         .container {
+             @include container.mobile() {
+                       row-gap: 4rem;
+                    }
             .title {
                 grid-column: 1 / span 1;
+                 @include container.mobile() {
+                       grid-column: span 1;
+                    }
             }
 
             .link {
@@ -15,6 +21,9 @@
                     justify-content: start;
                     grid-column: 1;
                 }
+                 @include container.mobile() {
+                       grid-column: span 1;
+                    }
             }
             .name-title {
               @include kit.heading_1;
@@ -24,10 +33,16 @@
                     @include kit.button_1;
                     color: kit.$text-primary-subduded-32;
                 }
+                 @include container.mobile() {
+                       grid-column: span 2;
+                    }
             }
             .desc {
                 grid-column: 1 / span 2;
                 @include kit.subheading;
+                @include container.mobile() {
+                       grid-column: span 2;
+                    }
             }
 
             .swiper-slide,

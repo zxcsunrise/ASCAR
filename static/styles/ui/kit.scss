@@ -1,4 +1,5 @@
 @use './mixins.scss' as mixin;
+@use './containers.scss' as mobile;
 // colors 
 $bg-primary: #FFFFFF;
 $bg-inverse: #212121;
@@ -20,31 +21,48 @@ $icon-primary-subdued-32: rgba(184, 184, 184, 1);
 $border-primary: #212121;
 $border-primary-subduded-32: rgba(184, 184, 184, 1);
 $border-system-wrong: rgba(159, 49, 37, 1);
+
 // typography
 @mixin heading_1() {
     font-weight: 500;
     font-size: 8rem;
     line-height: 100%;
     letter-spacing: -4%;
+
+    @include mobile.mobile() {
+        font-size: 5.33333rem;
+    }
 }
+
 @mixin heading_2() {
     font-weight: 500;
     font-size: 4rem;
     line-height: 100%;
     letter-spacing: -4%;
+
+    @include mobile.mobile() {
+        font-size: 3.3333rem;
+    }
 }
+
 @mixin heading_3() {
     font-weight: 500;
     font-size: 2.5rem;
     line-height: 100%;
     letter-spacing: -4%;
+
+    @include mobile.mobile() {
+        font-size: 2.66666rem;
+    }
 }
+
 @mixin subheading() {
     font-weight: 500;
     font-size: 2rem;
     line-height: 114.99999999999999%;
     letter-spacing: -3%;
 }
+
 @mixin text_1() {
     font-weight: 400;
     font-size: 1.5rem;
@@ -53,6 +71,7 @@ $border-system-wrong: rgba(159, 49, 37, 1);
     font-variant-numeric-figure: lining-nums;
     font-variant-numeric-spacing: proportional-nums;
 }
+
 @mixin text_2() {
     font-weight: 400;
     font-size: 1.25rem;
@@ -61,12 +80,14 @@ $border-system-wrong: rgba(159, 49, 37, 1);
     font-variant-numeric-figure: lining-nums;
     font-variant-numeric-spacing: proportional-nums;
 }
+
 @mixin description() {
     font-weight: 400;
     font-size: 1rem;
     line-height: 130%;
     letter-spacing: -1%;
 }
+
 @mixin button_1() {
     font-weight: 500;
     font-size: 1.5rem;
@@ -75,6 +96,7 @@ $border-system-wrong: rgba(159, 49, 37, 1);
     font-variant-numeric-figure: lining-nums;
     font-variant-numeric-spacing: proportional-nums;
 }
+
 @mixin button_2() {
     font-weight: 500;
     font-size: 1.25rem;
@@ -94,34 +116,45 @@ $border-system-wrong: rgba(159, 49, 37, 1);
     height: fit-content;
     border-radius: 1000rem;
     text-align: center;
+
     &.small {
         padding: 1rem;
         @include button_2();
+
         &.subdued {
             background-color: $bg-inverse-subdued-8;
             transition: background .3s ease-in-out;
+
             &:hover {
                 background-color: $bg-inverse-subdued-16;
             }
         }
+
         &.primary {
             background-color: $bg-inverse;
             color: $text-inverse;
             transition: .3s ease-in-out;
+
             &:hover {
                 background-color: $bg-primary;
                 color: $text-primary;
                 outline: .0625rem solid $border-primary;
             }
         }
+        @include mobile.mobile() {
+            padding: .5rem 1rem;
+        }
     }
+
     &.basic {
         @include button_1();
         padding: 1rem 4rem;
+
         &.primary {
             background-color: $bg-inverse;
             color: $text-inverse;
             transition: .3s ease-in-out;
+
             &:hover {
                 background-color: $bg-primary;
                 color: $text-primary;
@@ -129,6 +162,7 @@ $border-system-wrong: rgba(159, 49, 37, 1);
             }
         }
     }
+
     &.rounded {
         @include subheading();
         padding: 2.1rem;
@@ -137,8 +171,9 @@ $border-system-wrong: rgba(159, 49, 37, 1);
         aspect-ratio: 1 / 1;
         align-items: center;
         transition: border .3s ease-in-out;
+
         &:hover {
-             border: .0625rem solid $border-primary;
+            border: .0625rem solid $border-primary;
         }
     }
 }
@@ -146,22 +181,27 @@ $border-system-wrong: rgba(159, 49, 37, 1);
 .link {
     display: flex;
     gap: .25rem;
+
     &.basic {
         &.regular {
             @include text_1();
             @include mixin.df_ac;
             transition: opacity .3s ease-in-out;
+
             &:hover {
                 opacity: .75;
             }
         }
     }
+
     &.subdued {
         color: $text-primary-subduded-32;
+
         &.regular {
             @include text_1();
             @include mixin.df_ac;
             transition: opacity .3s ease-in-out;
+
             &:hover {
                 opacity: .75;
             }
@@ -173,6 +213,10 @@ $border-system-wrong: rgba(159, 49, 37, 1);
     grid-column: span 5;
     @include text_1();
     color: $text-primary-subduded-42;
+
+    @include mobile.mobile() {
+        grid-column: span 2;
+    }
 }
 
 

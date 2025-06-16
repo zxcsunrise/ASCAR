@@ -6,9 +6,13 @@
         .container  {
             .info-block {
                 grid-column: 2 / span 3;
+                @include container.mobile() {
+                        grid-column: span 2;
+                    }
                 @include mixin.df_fdc(1.75rem);
                 .name {
                     @include kit.heading_3;
+                    
                 }
                 .text {
                     @include kit.text_1;

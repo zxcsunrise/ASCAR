@@ -1,67 +1,102 @@
 @use '../ui/kit.scss' as kit;
 @use '../ui/mixins.scss' as mixin;
+@use '../ui/containers.scss' as container;
+
 footer {
-    .footer-block {
-        @include mixin.df_fdc(2.5rem);
-        .container {
-            .item {
-                @include mixin.df_fdc();
-                justify-content: space-between;
-                ul {
-                    @include mixin.df_fdc(.75rem);
-                    li {
-                        a {
-                            @include mixin.df_ac;
-                            gap: .25rem;
-                        }
-                    }
-                }
-                &.nav {
-                    grid-column: 4;
-                }
-                .name {
-                    @include kit.button_1;                
-                } 
+  .footer-block {
+    @include mixin.df_fdc(2.5rem);
+
+    .container {
+      @include container.mobile() {
+        row-gap: 4rem;
+      }
+
+      .item {
+        @include mixin.df_fdc();
+        justify-content: space-between;
+
+        ul {
+          @include mixin.df_fdc(.75rem);
+
+          li {
+            a {
+              @include mixin.df_ac;
+              gap: .25rem;
             }
-            .year {
-                grid-column: 5;
-                justify-content: end;
-            }
+          }
         }
-        .sliding-text-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            height: 10rem;
+
+        &.nav {
+          grid-column: 4;
+
+          @include container.mobile() {
+            grid-column: 2 / span 2;
           }
-          
-          .sliding-text {
-            position: absolute;
-            white-space: nowrap;
-            animation: slideLeft 20s linear infinite;
-            @include kit.heading_1;
-          }
-          
-          @keyframes slideLeft {
-            0% {
-              transform: translateX(100%);
-              left: 100%;
-            }
-            100% {
-              transform: translateX(-100%);
-              left: 0;
-            }
-          }
-          .line {
-            display: flex;
-            height: .0625rem;
-            background-color: kit.$bg-inverse;
-          }
-          .sliding-name {
-            span {
-                @include kit.button_1;
-                grid-column: span 5;
-            }
-          }
+        }
+
+        .name {
+          @include kit.button_1;
+        }
+      }
+
+      .year {
+        grid-column: 5;
+        justify-content: end;
+
+        @include container.mobile() {
+          grid-column: span 1;
+          align-items: end;
+        }
+      }
+
+      .terms {
+        @include container.mobile() {
+          justify-content: end;
+        }
+      }
     }
+
+    .sliding-text-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 10rem;
+
+      @include container.mobile() {
+        height: 6rem;
+      }
+    }
+
+    .sliding-text {
+      position: absolute;
+      white-space: nowrap;
+      animation: slideLeft 20s linear infinite;
+      @include kit.heading_1;
+    }
+
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(100%);
+        left: 100%;
+      }
+
+      100% {
+        transform: translateX(-100%);
+        left: 0;
+      }
+    }
+
+    .line {
+      display: flex;
+      height: .0625rem;
+      background-color: kit.$bg-inverse;
+    }
+
+    .sliding-name {
+      span {
+        @include kit.button_1;
+        grid-column: span 5;
+      }
+    }
+  }
 }

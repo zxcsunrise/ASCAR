@@ -4,10 +4,12 @@
 * {
     cursor: none;
 }
+
 html {
     background-color: #fff;
     font-size: 16px;
     font-family: "Inter", sans-serif;
+
     @include mobile.mobile() {
         font-size: 12px;
     }
@@ -18,11 +20,14 @@ body {
     margin: 0;
     padding: 0;
 }
-ul,ol {
+
+ul,
+ol {
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
 a {
     text-decoration: none;
     color: kit.$text-primary;
@@ -35,18 +40,22 @@ textarea {
     padding: 0;
     margin: 0;
 }
+
 .custom-cursor {
-            position: fixed;
-            width: 4.5rem;
-            height: 4.5rem;
-            border-radius: 50%;
-            background-color: #212121;
-            pointer-events: none;
-            mix-blend-mode: difference;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease-out, background-color 0.1s ease;
-            will-change: transform;
-        }
+    position: fixed;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #212121;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out, background-color 0.1s ease;
+    will-change: transform;
+     @include mobile.mobile() {
+        display: none;
+    }
+}

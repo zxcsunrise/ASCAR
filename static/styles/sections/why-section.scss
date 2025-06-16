@@ -1,32 +1,50 @@
 @use '../ui/mixins.scss' as mixin;
 @use '../ui/kit.scss' as kit;
 @use '../ui/containers.scss' as container;
+
 .why-section {
     .why-block {
         .container {
             .title {
                 grid-column: span 1;
             }
+
             .text {
                 grid-column: span 3;
                 @include kit.heading_2;
             }
+
             .info-block {
                 grid-column: 2 / span 4;
+
+                @include container.mobile() {
+                    grid-column: span 2
+                }
+
                 .item {
-                    @include container.grid(2,2.5rem);
+                    @include container.grid(2, 2.5rem);
                     padding: 2.5rem 0;
                     border-bottom: .0625rem solid kit.$border-primary;
                     position: relative;
+
                     &:last-child {
                         border: 0;
                     }
+
+                    @include container.mobile() {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.25rem;
+                    }
+
                     .name {
                         @include kit.heading_3;
                     }
+
                     .desc {
                         @include kit.text_1;
                     }
+
                     .img {
                         display: block;
                         opacity: 0;
@@ -37,12 +55,17 @@
                         left: 75%;
                         z-index: 10;
                         transition: opacity .3s ease-in-out;
+
                         img {
                             width: 100%;
                             height: 100%;
                             object-fit: contain;
                         }
+                         @include container.mobile() {
+                    display: none;
+                }
                     }
+
                     &:hover {
                         .img {
                             opacity: 1;

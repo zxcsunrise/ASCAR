@@ -1,16 +1,19 @@
 @mixin mobile {
-    @media (max-width: 768px) {
-      @content;
-    }
+  @media (max-width: 768px) {
+    @content;
+  }
 }
+
 @mixin grid($columns: 0, $gap: 0) {
   display: grid;
   grid-template-columns: repeat($columns, minmax(0, 1fr));
   gap: $gap;
 }
+
 .container {
   margin: 0 2.5rem;
   @include grid(5, 2.5rem);
+
   @include mobile() {
     margin: 0 1rem;
     @include grid(2, 1rem);

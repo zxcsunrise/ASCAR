@@ -44,6 +44,12 @@ const testimonialsSwiper = new Swiper(".testimonialsSwiper", {
   },
   slidesPerView: 1.5,
   spaceBetween: 40,
+  breakpoints: {
+    320: {
+      slidesPerView: 1.1,
+      spaceBetween: 12,
+    },
+  },
 });
 const interiorSwiper = new Swiper(".interiorSwiper", {
   pagination: {

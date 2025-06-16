@@ -1,123 +1,162 @@
 @use '../ui/mixins.scss' as mixin;
 @use '../ui/kit.scss' as kit;
+@use '../ui/containers.scss' as mobile;
+
 .services-section {
     .services-block {
         &.page {
             .service {
                 grid-column: span 2 !important;
+
                 &.first {
                     grid-column: 2 / span 2 !important;
                 }
+
                 .img {
                     aspect-ratio: 1 /1;
                 }
             }
         }
+
         &.service-page {
             .service {
                 grid-column: span 2 !important;
+
                 &.first {
                     grid-column: 2 / span 4 !important;
                 }
+
                 .img {
                     aspect-ratio: unset;
                 }
             }
+
             .name {
                 grid-column: span 4 !important;
+
                 &::after {
                     display: none;
                 }
             }
+
             .link {
                 span {
                     color: kit.$text-primary-subduded-32;
                 }
             }
+
             .accordion {
                 grid-column: 2 / span 4;
+
                 .accordion-item {
                     .accordion-header {
                         @include mixin.df_jb_ac;
                         padding: 2.5rem 0;
+
                         .title-block {
                             display: flex;
                             align-items: center;
                             gap: 2rem;
+
                             .count {
                                 @include kit.text_1;
                                 color: kit.$text-primary-subduded-32;
                             }
+
                             .title {
                                 @include kit.heading_3;
                                 color: kit.$text-primary;
                             }
                         }
                     }
+
                     .accordion-content {
                         padding-bottom: 2.5rem;
+
                         p {
                             @include kit.text_1;
                         }
                     }
                 }
             }
+
             .price {
                 grid-column: 4;
                 @include mixin.df_fdc(.5rem);
                 @include kit.text_1;
+
                 .count {
                     @include kit.heading_2;
-                }   
+                }
             }
+
             .button {
                 margin-top: 2.5rem;
             }
         }
+
         .container {
             .link {
                 grid-column: span 1;
             }
+
             .name {
-                grid-column: span 2 ;
+                grid-column: span 2;
                 @include kit.heading_1;
                 display: flex;
+
                 &::after {
                     content: '2';
                     @include kit.button_1;
                     color: kit.$text-primary-subduded-32;
                 }
             }
+
             .service {
                 @include mixin.df_fdc(1.25rem);
                 grid-column: span 2;
+
                 .img {
                     max-width: 100%;
                     height: 100%;
+
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                     }
                 }
+
                 .info-block {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+
                     .desc {
                         @include mixin.df_fdc(.25rem);
+
                         .title {
                             @include kit.button_1;
                             color: kit.$text-primary;
                         }
+
                         .tarif {
                             @include kit.text_1;
                             color: kit.$text-primary-subduded-42;
                         }
                     }
                 }
+
                 &.first {
                     grid-column: span 3;
+
+                    @include mobile.mobile() {
+                        grid-column: span 2;
+
+                        .img {
+                            height: 37.5rem;
+                        }
+                    }
                 }
             }
         }
