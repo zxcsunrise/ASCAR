@@ -13,11 +13,18 @@
                     @include kit.button_1;
                     color: kit.$text-primary-subduded-32;
                 }
+                  @include container.mobile() {
+                    grid-column: span 2
+                }
             }
             .card-holder {
                 @include container.grid(2);
                 gap: 2.5rem;
                 grid-column: 2 / span 4;
+                  @include container.mobile() {
+                    grid-column: span 2;
+                    @include mixin.df_fdc(2rem)
+                }
                 .card {
                     @include mixin.df_fdc(.75rem);
                     .img {

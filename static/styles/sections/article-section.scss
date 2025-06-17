@@ -1,5 +1,6 @@
 @use '../ui/kit.scss' as kit;
 @use '../ui/mixins.scss' as mixin;
+@use '../ui/containers.scss' as container;
 
 .article-section {
     .article-block {
@@ -12,18 +13,27 @@
                 @include kit.heading_1;
                 display: flex;
                 grid-column: 2 / span 4;
+                @include container.mobile() {
+                    grid-column: span 2
+                }
 
             }
 
             .img {
                 height: 43.75rem;
                 grid-column: 2 / span 4;
+                @include container.mobile() {
+                    grid-column: span 2
+                }
                 img {
                     @include mixin.img(cover);
                 }
             }
             .desc-block {
                 grid-column: 2 / span 4;
+                @include container.mobile() {
+                    grid-column: span 2
+                }
                 @include mixin.df_fdc(2rem);
                 .desc {
                     @include kit.subheading;

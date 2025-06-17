@@ -8,19 +8,32 @@
             .name {
                 grid-column: 2 / span 2;
                 @include kit.heading_2;
+
+                @include container.mobile() {
+                    grid-column: span 2
+                }
             }
+
             .slider {
                 grid-column: 2 / span 4;
+
+                @include container.mobile() {
+                    grid-column: span 2
+                }
 
                 .interiorSwiper {
                     .swiper-slide {
                         height: 43.5rem;
 
+                        @include container.mobile() {
+                            height: 35rem;
+                        }
+
                         img {
                             @include mixin.img(cover);
                         }
                     }
-                    
+
                     .swiper-button-next,
                     .swiper-button-prev {
                         padding: 1rem 1.5rem;
@@ -28,12 +41,18 @@
                         border: .0625rem kit.$border-primary-subduded-32 solid;
                         border-radius: 1000rem;
                         background-color: kit.$bg-primary;
+
                         &::after {
                             font-size: 0;
                         }
+
+                        @include container.mobile() {
+                            display: none;
+                        }
                     }
+
                     .swiper-pagination {
-                        
+
 
                         .swiper-pagination-bullet {
                             transition: .3s;
@@ -41,7 +60,9 @@
                             width: .75rem;
                             margin: 0 .75rem;
                             background: kit.$bg-primary;
+                            opacity: 1;
                         }
+
                         .swiper-pagination-bullet-active {
                             width: 2.5rem;
                             border-radius: 1rem;

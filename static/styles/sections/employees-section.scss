@@ -1,33 +1,63 @@
 @use '../ui/kit.scss' as kit;
 @use '../ui/mixins.scss' as mixin;
 @use '../ui/containers.scss' as container;
+
 .employees-section {
     .employees-block {
         .container {
             .title {
                 grid-column: 1 / span 1;
+
+                @include container.mobile() {
+                    grid-column: span 2;
+                }
             }
+
             .name {
                 grid-column: 2 / span 2;
                 @include kit.heading_2;
-                text-align: end
+                text-align: end;
+
+                @include container.mobile() {
+                    grid-column: span 2;
+                    text-align: start
+                }
+
             }
+
             .desc {
                 @include kit.text_1;
 
                 grid-column: 2 / span 2;
-                &::before {
-                    content: " \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0  "; 
+
+                @include container.mobile() {
+                    grid-column: span 2;
                 }
+
+                &::before {
+                    content: " \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0  ";
+
+                }
+
             }
+
             .card {
+                display: flex;
+                flex-direction: column;
+                gap: .75rem;
                 &.first {
                     grid-column: 1 / span 1;
+
+                    @include container.mobile() {
+                        grid-column: span 1;
+                    }
                 }
+
                 .img {
                     max-width: 100%;
                     aspect-ratio: 1/1.4;
                     overflow: hidden;
+
                     img {
                         scale: 1.25;
                         width: 100%;
@@ -35,15 +65,32 @@
                         object-fit: cover;
                     }
                 }
+
                 .info-block {
                     .name {
                         @include kit.button_1;
                         text-align: unset;
                     }
+
                     .office {
                         @include kit.button_1;
                         color: kit.$text-primary-subduded-32;
                     }
+                }
+
+                @include container.mobile() {
+                    display: none;
+                }
+            }
+
+            .slider {
+                display: none;
+                grid-column: span 2;
+                @include container.mobile() {
+                    display: block;
+                }
+                .card {
+                    display: flex;
                 }
             }
         }

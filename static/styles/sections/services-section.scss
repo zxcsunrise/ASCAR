@@ -10,6 +10,9 @@
 
                 &.first {
                     grid-column: 2 / span 2 !important;
+                     @include mobile.mobile() {
+                        grid-column: span 2 !important;
+                    }
                 }
 
                 .img {
@@ -24,6 +27,9 @@
 
                 &.first {
                     grid-column: 2 / span 4 !important;
+                     @include mobile.mobile() {
+                        grid-column: span 2 !important;
+                    }
                 }
 
                 .img {
@@ -37,6 +43,9 @@
                 &::after {
                     display: none;
                 }
+                 @include mobile.mobile() {
+                        grid-column: span 2 !important;
+                    }
             }
 
             .link {
@@ -47,7 +56,9 @@
 
             .accordion {
                 grid-column: 2 / span 4;
-
+                 @include mobile.mobile() {
+                        grid-column: span 2 !important;
+                    }
                 .accordion-item {
                     .accordion-header {
                         @include mixin.df_jb_ac;
@@ -88,6 +99,9 @@
                 .count {
                     @include kit.heading_2;
                 }
+                 @include mobile.mobile() {
+                        grid-column: span 2 !important;
+                    }
             }
 
             .button {

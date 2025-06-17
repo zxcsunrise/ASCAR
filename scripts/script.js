@@ -61,6 +61,10 @@ const interiorSwiper = new Swiper(".interiorSwiper", {
   },
   spaceBetween: 16,
 });
+const employeesSwiper = new Swiper(".employeesSwiper", {
+  spaceBetween: 12,
+  slidesPerView: 1.075,
+});
 
 
 // Создаём элемент курсора
