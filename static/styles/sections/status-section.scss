@@ -1,5 +1,7 @@
 @use '../ui/mixins.scss' as mixin;
 @use '../ui/kit.scss' as kit;
+@use '../ui/containers.scss' as container;
+
 .status-section {
     background-image: url('../images/img/404-bg.png');
     filter: saturate(25%);
@@ -10,31 +12,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     &.success {
         background-image: url('../images/img/success-bg.png');
         filter: unset;
+        @include container.mobile() {
+            background-image: url('../images/img/success-bg-mobile.png');
+            background-position: 15% 15%;
+        }
     }
+
     .status-block {
+
+        @include container.mobile() {
+            height: 100%;
+            display: flex;
+            align-items: end;
+            padding-bottom: 1rem;
+        }
+
         .container {
             .info-block {
                 @include mixin.df_fdc(1rem);
                 align-items: center;
                 grid-column: 2 / span 3;
                 text-align: center;
+               
+
+                @include container.mobile() {
+                    grid-column: span 2;
+                     height: 50vh;
+                }
+
                 .link {
                     text-decoration: underline;
                 }
+
                 .name {
                     @include kit.heading_1;
                 }
+
                 .desc {
                     @include kit.text_1;
                 }
             }
+
             .button {
                 grid-column: 3 / span 1;
+
+                @include container.mobile() {
+                    grid-column: span 2
+                }
             }
         }
     }
 }
-

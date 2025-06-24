@@ -1,54 +1,70 @@
 @use '../ui/kit.scss' as kit;
 @use '../ui/mixins.scss' as mixin;
 @use '../ui/containers.scss' as container;
+
 .testimonials-section {
     .testimonials-block {
         .container {
-             @include container.mobile() {
-                       row-gap: 4rem;
-                    }
+            @include container.mobile() {
+                row-gap: 4rem;
+            }
+
             .title {
                 grid-column: 1 / span 1;
-                 @include container.mobile() {
-                       grid-column: span 1;
-                    }
+
+                @include container.mobile() {
+                    grid-column: span 1;
+                }
             }
 
             .link {
                 grid-column: 5 / span 1;
                 justify-content: end;
+
                 &.start {
                     justify-content: start;
                     grid-column: 1;
                 }
-                 @include container.mobile() {
-                       grid-column: span 1;
-                    }
+
+                @include container.mobile() {
+                    grid-column: span 2;
+                    justify-content: start;
+                }
             }
+
             .name-title {
-              @include kit.heading_1;
+                @include kit.heading_1;
                 display: flex;
+
                 &::after {
                     content: '148';
                     @include kit.button_1;
                     color: kit.$text-primary-subduded-32;
-                }
-                 @include container.mobile() {
-                       grid-column: span 2;
+
+                    @include container.mobile() {
+                        display: none;
                     }
+                }
+
+                @include container.mobile() {
+                    grid-column: span 2;
+                }
             }
+
             .desc {
                 grid-column: 1 / span 2;
                 @include kit.subheading;
+
                 @include container.mobile() {
-                       grid-column: span 2;
-                    }
+                    grid-column: span 2;
+                }
             }
 
             .swiper-slide,
             .item {
                 @include mixin.df_fdc(1rem);
                 grid-column: span 1;
+
                 .top {
                     display: flex;
                     gap: 1rem;
@@ -88,11 +104,23 @@
                     @include kit.text_1;
                 }
             }
+
             .item-holder {
                 @include container.grid(2);
                 gap: 2.5rem;
                 grid-column: 2 / span 4;
+
+                @include container.mobile() {
+                    grid-column: span 2;
+                }
+
+                .item {
+                    @include container.mobile() {
+                        grid-column: span 2;
+                    }
+                }
             }
+
             .slider {
                 grid-column: span 3;
                 position: relative;

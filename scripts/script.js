@@ -151,3 +151,19 @@ if (document.readyState === 'complete') {
 } else {
   document.addEventListener('DOMContentLoaded', initCursor);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieNotification = document.getElementById('cookie-notification');
+    const cookieAcceptBtn = document.getElementById('cookie-accept');
+    
+    // Проверяем, было ли уже принято уведомление
+    if (!localStorage.getItem('cookieAccepted')) {
+        cookieNotification.style.display = 'block';
+    }
+    
+    // Обработчик клика на кнопку принятия
+    cookieAcceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookieAccepted', 'true');
+        cookieNotification.style.display = 'none';
+    });
+});

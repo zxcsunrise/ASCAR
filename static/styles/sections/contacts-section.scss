@@ -1,19 +1,29 @@
 @use '../ui/mixins.scss' as mixin;
 @use '../ui/kit.scss' as kit;
+@use '../ui/containers.scss' as container;
 
 .contacts-section {
     .contacts-block {
         .container {
             .map {
                 grid-column: 2 / span 4;
+
                 iframe {
                     width: 100%;
                     height: 44.5rem;
+                }
+
+                @include container.mobile() {
+                    grid-column: span 2;
                 }
             }
 
             .name {
                 @include kit.heading_1;
+
+                @include container.mobile() {
+                    grid-column: span 2;
+                }
             }
         }
     }
