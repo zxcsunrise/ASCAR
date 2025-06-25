@@ -227,3 +227,56 @@ $border-system-wrong: rgba(159, 49, 37, 1);
 .accordion-content {
     display: none;
 }
+
+// Стили меню
+.burger-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding-top: 70px;
+    
+    &.active {
+        transform: translateX(0);
+    }
+}
+
+.burger-list {
+    list-style: none;
+}
+
+.burger-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    
+    a {
+        display: block;
+        height: 20px; // Пустой контент
+        background-color: #f0f0f0;
+    }
+}
+
+// Оверлей при открытом меню
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 999;
+    
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

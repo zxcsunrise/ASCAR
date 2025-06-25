@@ -2,6 +2,16 @@
 @use '../ui/mixins.scss' as mixin;
 @use '../ui/containers.scss' as container;
 .form-section {
+    &.modal {
+        .form-block {
+            .container {
+                  .name {
+                        @include kit.heading_1;
+                        grid-column: span 2;
+                    }
+            }
+        }
+    }
     .form-block {
         .container {
             .name-block {

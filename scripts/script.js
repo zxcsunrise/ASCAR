@@ -167,3 +167,100 @@ document.addEventListener('DOMContentLoaded', function() {
         cookieNotification.style.display = 'none';
     });
 });
+
+// modal window
+document.addEventListener('DOMContentLoaded', function() {
+    // Общие функции для работы с модальными окнами
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeModal(modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Открытие модальных окон по кнопкам
+    document.querySelectorAll('.open-modal-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal');
+            openModal(modalId);
+        });
+    });
+    
+    // Закрытие модальных окон
+    document.querySelectorAll('.modal-overlay').forEach(modal => {
+        // Закрытие по кнопке закрытия
+        modal.querySelectorAll('.close-modal-btn, .modal-cancel-btn').forEach(btn => {
+            btn.addEventListener('click', () => closeModal(modal));
+        });
+        
+        // Закрытие по клику вне окна
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
+    
+    // Закрытие по Esc
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                closeModal(modal);
+            });
+        }
+    });
+    
+    // Дополнительно: можно добавить автоматическое закрытие при успешном действии
+    document.querySelectorAll('.modal-action-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = this.closest('.modal-overlay');
+            // Здесь можно добавить логику перед закрытием
+            closeModal(modal);
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerBtn = document.getElementById('burgerBtn');
+    const burgerNav = document.getElementById('burgerNav');
+    
+    // Создаем оверлей динамически
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+    
+    // Открытие/закрытие меню
+    burgerBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        burgerNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // Блокировка прокрутки страницы
+        document.body.style.overflow = burgerNav.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Закрытие меню по клику на оверлей
+    overlay.addEventListener('click', function() {
+        burgerBtn.classList.remove('active');
+        burgerNav.classList.remove('active');
+        this.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    // Закрытие меню по Esc
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && burgerNav.classList.contains('active')) {
+            burgerBtn.classList.remove('active');
+            burgerNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
