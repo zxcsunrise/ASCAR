@@ -70,11 +70,18 @@ textarea {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     display: none;
-
+    justify-content: end;
     .cookie-content {
+        align-items: center;
         p {
             @include kit.subheading();
             grid-column: 2 / span 3;
+        }
+        .btn-block {
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+            gap: 2.5rem;
         }
     }
 }

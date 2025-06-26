@@ -41,13 +41,16 @@
 
     @include container.mobile() {
         max-height: 100vh;
+        border-radius: 0;
     }
 }
 
 .modal-header {
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid #eee;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
+}
+.close-modal-btn {
+    background: none;
 }

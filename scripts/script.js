@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Проверяем, было ли уже принято уведомление
     if (!localStorage.getItem('cookieAccepted')) {
-        cookieNotification.style.display = 'block';
+        cookieNotification.style.display = 'flex';
     }
     
     // Обработчик клика на кнопку принятия

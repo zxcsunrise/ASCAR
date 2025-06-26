@@ -26,9 +26,9 @@
                     <ul>
                         <li><a href="./about.html" class="link basic regular">About</a></li>
                         <li><a href="./services.html" class="link basic regular">Services</a></li>
-                        <li><a href="#!" class="link basic regular">Gallery</a></li>
-                        <li><a href="#!" class="link basic regular">Blog</a></li>
-                        <li><a href="#!" class="link basic regular">Testimonials</a></li>
+                        <li><a href="./gallery.html" class="link basic regular">Gallery</a></li>
+                        <li><a href="./articles.html" class="link basic regular">Blog</a></li>
+                        <li><a href="./testimonials.html" class="link basic regular">Testimonials</a></li>
                         <li><a href="./contacts.html" class="link basic regular">Contacts</a></li>
                     </ul>
                 </nav>
@@ -64,12 +64,14 @@
                     </ul>
                     <nav class="burger-nav" id="burgerNav">
                 <ul class="burger-list">
-                     <li><a href="./about.html" class="link basic regular">About</a></li>
+                        
+                        <li><a href="./about.html" class="link basic regular">About</a></li>
                         <li><a href="./services.html" class="link basic regular">Services</a></li>
                         <li><a href="#!" class="link basic regular">Gallery</a></li>
                         <li><a href="#!" class="link basic regular">Blog</a></li>
                         <li><a href="#!" class="link basic regular">Testimonials</a></li>
                         <li><a href="./contacts.html" class="link basic regular">Contacts</a></li>
+                        <li>                    <a class="button small subdued open-modal-btn" data-modal="modal1">Start Work With Us</a></li>
                 </ul>
             </nav>
                 </div>
@@ -632,7 +634,10 @@
     <div id="cookie-notification" class="cookie-notification">
         <div class="cookie-content container">
             <p>We are using cookie-files to ensure that the site works well</p>
-            <button id="cookie-accept" class="cookie-btn button small inverse">OK, Got it!</button>
+            <div class="btn-block">
+                <button id="cookie-accept" class="cookie-btn button small inverse">OK, Got it!</button>
+                <span class="cookie-btn" id="cookie-accept">&times</span>
+            </div>
         </div>
     </div>
     <div class="modal-overlay" id="modal1">
