@@ -1895,6 +1895,7 @@ footer .footer-block .sliding-name span {
   border: 0.0625rem rgb(184, 184, 184) solid;
   border-radius: 1000rem;
   background-color: #FFFFFF;
+  cursor: none;
 }
 .interior-section .interior-block .container .slider .interiorSwiper .swiper-button-next::after,
 .interior-section .interior-block .container .slider .interiorSwiper .swiper-button-prev::after {
@@ -1913,6 +1914,7 @@ footer .footer-block .sliding-name span {
   margin: 0 0.75rem;
   background: #FFFFFF;
   opacity: 1;
+  cursor: none;
 }
 .interior-section .interior-block .container .slider .interiorSwiper .swiper-pagination .swiper-pagination-bullet-active {
   width: 2.5rem;

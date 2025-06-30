@@ -41,7 +41,7 @@
                         border: .0625rem kit.$border-primary-subduded-32 solid;
                         border-radius: 1000rem;
                         background-color: kit.$bg-primary;
-
+                        cursor: none;
                         &::after {
                             font-size: 0;
                         }
@@ -61,6 +61,7 @@
                             margin: 0 .75rem;
                             background: kit.$bg-primary;
                             opacity: 1;
+                            cursor: none;
                         }
 
                         .swiper-pagination-bullet-active {
